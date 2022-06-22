@@ -32,10 +32,11 @@ function App() {
           onChange={(e) => setInput(e.target.value)} />
             
         <Button disabled={!input} variant="contained" color="primary" type="submit" onClick={sendMessage}>Send Message</Button>  
+          
 </FormControl>
 
       {
-        messages.map(({ username, message }) => <Message key={username} text={message} user = { username } />)
+        messages.map((message) => <Message message={message} user = { username } />)
       }
     </div>
   );

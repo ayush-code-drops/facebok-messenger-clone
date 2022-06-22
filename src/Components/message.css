@@ -1,1 +1,13 @@
+.message__card{
+ 
+    margin: 10px;
+    width: fit-content;
+    height: 60px;
 
+}
+
+.message__user{
+    background-color: blue !important;
+    color: white !important;
+    margin-left: auto;
+}
