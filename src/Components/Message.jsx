@@ -1,21 +1,21 @@
-import React from 'react'
+import React,{forwardRef} from 'react'
 import './message.css'
 import {Card,CardContent,Typography} from '@mui/material'
-function Message({ message, user }) {
+const Message=forwardRef(({ message, user },ref)=> {
     let isUser = user === message.username;
-    console.log('user->',user,message.username)
+  //  console.log('user->',user,message.username)
   return (
-      <Card className={`message__card ${isUser && 'message__user'}`}>
+      <Card ref={ref} className={`message__card ${isUser && 'message__user'}`}>
           <CardContent>
               <Typography 
                   variant='h5'
                   
-                  component='h2'>
-                  {message.username}:{message.message}
+                  component='h3'>
+                  {!isUser && `${message.username}:`} {message.message}
                   </Typography>
           </CardContent>
       </Card>
   )
-}
+})
 
 export default Message
